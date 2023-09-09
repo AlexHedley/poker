@@ -23,6 +23,68 @@
                     "position": 2
                 }
             ]
+        },
+        {
+            "id": 2,
+            "name": "2023",
+            "date": "2023-09-01",
+            "description": "Winner £60, Second £10",
+            "pot": "£70",
+            "image": "images/1stSept2023.jpg",
+            "players": [
+                {
+                    "name": "Alex",
+                    "position": 2,
+                    "buyIns": 1
+                },
+                {
+                    "name": "Jonathan",
+                    "position": 4,
+                    "buyIns": 1
+                },
+                {
+                    "name": "Dougs",
+                    "position": 1,
+                    "buyIns": 2
+                },
+                {
+                    "name": "Simon",
+                    "position": 5,
+                    "buyIns": 1
+                },
+                {
+                    "name": "Calum",
+                    "position": 3,
+                    "buyIns": 2
+                }
+            ],
+            "chips": [
+                {
+                    "colour": "white",
+                    "amount": "1",
+                    "quantity": "10"
+                },
+                {
+                    "colour": "blue",
+                    "amount": "2",
+                    "quantity": "7"
+                },
+                {
+                    "colour": "green",
+                    "amount": "5",
+                    "quantity": "5"
+                },
+                {
+                    "colour": "red",
+                    "amount": "10",
+                    "quantity": "5"
+                },
+                {
+                    "colour": "black",
+                    "amount": "20",
+                    "quantity": "3"
+                }
+            ]
         }
     ]
 }

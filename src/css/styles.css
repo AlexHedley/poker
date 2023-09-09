@@ -5,3 +5,8 @@ body {
 h1 {
     color: #505620;
 }
+
+.container {
+    /* max-width: 1140px; */
+    max-width: 1500px;
+}

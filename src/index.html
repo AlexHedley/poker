@@ -112,7 +112,7 @@
 
                 <br />
                 
-                <div class="row">
+                <!-- <div class="row">
                     <div class="col">
 
                         <div class="form-check">
@@ -121,9 +121,9 @@
                         </div>
 
                     </div>
-                </div>
+                </div> -->
 
-                <div class="row">
+                <!-- <div class="row">
                     <div class="col">
 
                         <div id="output" style="margin: 30px;">
@@ -131,22 +131,27 @@
                         </div>
 
                     </div>
-                </div>
+                </div> -->
 
                 <div class="row">
                     <div 
                         ng-repeat="game in games | filter:searchText"
-                        class="col-md-4"
+                        class="col-md-3"
                         style="margin-bottom: 50px;"
                     >
-                        <div class="card" style="width: 18rem;">
+                        <div class="card" style="width: 18rem;" data-id="{{game.id}}">
+                            <img ng-if="game.image.length > 0" ng-src="/poker/{{game.image}}" class="card-img-top" alt="{{game.name}}">
+                            <div class="card-header">
+                                {{game.name}}
+                            </div>
                             <div class="card-body">
-                                <h5 class="card-title">{{game.name}}</h5>
                                 <p class="card-text">{{game.description}}</p>
-                                <p class="card-text">{{game.date | date:'d MMM yyyy'}}</p>
                                 <div ng-repeat="player in game.players">
-                                    <p>{{player.name}} ({{player.position}}) <span ng-if="player.position == 1"><strong>Winner</strong></span></p>
+                                    <p>{{player.name}} ({{player.position}}) [{{player.buyIns}}] <span ng-if="player.position == 1"><strong>Winner</strong></span></p>
                                 </div>
+                            </div>
+                            <div class="card-footer text-muted">
+                                {{game.date | toDate | date:'mediumDate'}}
                             </div>
                         </div>
                     </div>
