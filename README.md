@@ -23,9 +23,11 @@ Poker Games
 
 `cd src`
 
-`py -m http.server  -b 127.0.0.1`
+`py -m http.server -b 127.0.0.1`  
+`python -m http.server -b 127.0.0.1`  
 
-`cd src && py -m http.server  -b 127.0.0.1`
+`cd src && py -m http.server -b 127.0.0.1`  
+`cd src && python -m http.server -b 127.0.0.1`  
 
 - [local](http://localhost:8000/)
 

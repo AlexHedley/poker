@@ -10,3 +10,22 @@ h1 {
     /* max-width: 1140px; */
     max-width: 1500px;
 }
+
+.card {
+    background-color: lightgray;
+}
+
+.buyIns {
+    /* color: lightgray; */
+}
+
+.position {
+    /* color: lightblue; */
+}
+
+.winner {
+    color: gold;
+    -webkit-text-fill-color: gold; /* Will override color (regardless of order) */
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+}
