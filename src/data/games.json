@@ -157,8 +157,8 @@
             "id": 4,
             "name": "Jan 2025",
             "date": "2025-01-31",
-            "description": "",
-            "pot": "",
+            "description": "Winner £80, Second £20",
+            "pot": "£100",
             "image": "images/31stJan2025.jpg",
             "players": [
                 {
@@ -209,9 +209,9 @@
                     "quantity": "5"
                 },
                 {
-                    "colour": "blue",
-                    "amount": "£1",
-                    "quantity": "3"
+                    "colour": "red",
+                    "amount": "20p",
+                    "quantity": "5"
                 },
                 {
                     "colour": "green",
@@ -219,9 +219,9 @@
                     "quantity": "3"
                 },
                 {
-                    "colour": "red",
-                    "amount": "20p",
-                    "quantity": "5"
+                    "colour": "blue",
+                    "amount": "£1",
+                    "quantity": "3"
                 },
                 {
                     "colour": "black",
