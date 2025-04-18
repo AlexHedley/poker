@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -10,7 +11,8 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/vendor/bootstrap.min.css">
     <link rel="stylesheet" href="css/vendor/sticky-footer.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+        integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <!-- <link rel="stylesheet" href="css/jquery-ui.min.css"> -->
     <link rel="stylesheet" href="css/vendor/jquery-ui.1.12.1.min.css">
     <link rel="stylesheet" href="css/vendor/pivot.min.css">
@@ -23,8 +25,9 @@
     <!-- <link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'> -->
 
     <title>Poker Stats</title>
-  </head>
-  <body ng-app="myApp">
+</head>
+
+<body ng-app="myApp">
     <main role="main" class="container">
 
         <section class="jumbotron title-container text-center">
@@ -34,7 +37,8 @@
                 <div class="row justify-content-md-center">
                     <div class="col-lg-8">
                         <div class="input-group search-bar">
-                            <input type="text" class="form-control" ng-model='searchText' placeholder="Search for a game..." aria-label="Search">
+                            <input type="text" class="form-control" ng-model='searchText'
+                                placeholder="Search for a game..." aria-label="Search">
                             <button type="submit" class="btn btn-success"><i class="fa fa-search"></i></button>
                         </div>
                     </div>
@@ -43,12 +47,17 @@
             </div>
         </section>
 
-        <button class="btn btn-success float-right" type="button" data-toggle="collapse" data-target="#image" aria-expanded="false" aria-controls="image">
-            Show/Hide
-        </button>
-        <div class="collapse" id="image">
-            <div class="row justify-content-md-center">
-                <img src="images/poker-table.svg" width="500px" alt="Poker Table" />
+        <div class="row">
+            <div class="col">
+                <button class="btn btn-success float-right" type="button" data-toggle="collapse" data-target="#image"
+                    aria-expanded="false" aria-controls="image">
+                    Show/Hide
+                </button>
+                <div class="collapse" id="image">
+                    <div class="row justify-content-md-center">
+                        <img src="images/poker-table.svg" width="500px" alt="Poker Table" />
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -60,59 +69,94 @@
 
                 <div class="row justify-content-md-center">
                     <div class="">
-
-                        <table id="results" class="sortable">
-                            <thead>
-                                <tr>
-                                    <th>Date</th>
-                                    <th>Name</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr ng-repeat="game in games">
-                                    <td>{{game.date}}</td>
-                                    <td>{{game.name}}</td>
-                                </tr>
-                            </tbody>
-                        </table>
-
-                    </div>
-                </div>
-
-                <br />
-
-                <div class="row justify-content-md-center">
-                    <div class="">
-
                         <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
                             <ol class="carousel-indicators">
-                                <li ng-repeat="set in sets" data-target="#carouselExampleCaptions" data-slide-to="{{$index}}"></li>
+                                <li ng-repeat="game in games" data-target="#carouselExampleCaptions"
+                                    data-slide-to="{{$index}}"></li>
                             </ol>
                             <div class="carousel-inner">
-                                <div ng-repeat="game in games" class="carousel-item" ng-class='{active:$first}'>
-                                    <!-- <img src="/poker/{{game.image}}" class="d-block w-100" alt="{{game.name}}"> -->
+                                <div ng-repeat="game in games" class="carousel-item" ng-class="{active:$first}">
+                                    <img ng-if="game.image.length > 0" ng-src="{{game.image}}" class="d-block w-100"
+                                        alt="{{game.name}}" />
                                     <div class="carousel-caption d-none d-md-block">
                                         <h5>{{game.name}}</h5>
                                         <p>{{game.description}}</p>
                                     </div>
                                 </div>
                             </div>
-                            <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+                            <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button"
+                                data-slide="prev">
                                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                 <span class="sr-only">Previous</span>
                             </a>
-                            <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+                            <a class="carousel-control-next" href="#carouselExampleCaptions" role="button"
+                                data-slide="next">
                                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                 <span class="sr-only">Next</span>
                             </a>
                         </div>
-
                     </div>
                 </div>
+            </div>
 
-                <br />
-                
-                <!-- <div class="row">
+            <div class="row justify-content-md-center">
+                <div class="">
+
+                    <table id="results" class="sortable">
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Name</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="game in games">
+                                <td>{{game.date}}</td>
+                                <td>{{game.name}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+
+            <br />
+
+            <div class="row justify-content-md-center">
+                <div class="">
+
+                    <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li ng-repeat="set in sets" data-target="#carouselExampleCaptions"
+                                data-slide-to="{{$index}}"></li>
+                        </ol>
+                        <div class="carousel-inner">
+                            <div ng-repeat="game in games" class="carousel-item" ng-class='{active:$first}'>
+                                <!-- <img src="/poker/{{game.image}}" class="d-block w-100" alt="{{game.name}}"> -->
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h5>{{game.name}}</h5>
+                                    <p>{{game.description}}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button"
+                            data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExampleCaptions" role="button"
+                            data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+
+            <br />
+
+            <!-- <div class="row">
                     <div class="col">
 
                         <div class="form-check">
@@ -123,7 +167,7 @@
                     </div>
                 </div> -->
 
-                <!-- <div class="row">
+            <!-- <div class="row">
                     <div class="col">
 
                         <div id="output" style="margin: 30px;">
@@ -133,36 +177,45 @@
                     </div>
                 </div> -->
 
-                <div class="row">
-                    <div 
-                        ng-repeat="game in games | orderBy:'-id' | filter:searchText"
-                        class="col-md-3"
-                        style="margin-bottom: 50px;"
-                    >
-                        <div class="card" style="width: 18rem;" data-id="{{game.id}}">
-                            <img ng-if="game.image.length > 0" ng-src="{{game.image}}" class="card-img-top" alt="{{game.name}}">
-                            <div class="card-header">
-                                {{game.name}}
+            <div class="row">
+                <div ng-repeat="game in games | orderBy:'-id' | filter:searchText" class="col-md-3"
+                    style="margin-bottom: 50px;">
+                    <div class="card" style="width: 18rem;" data-id="{{game.id}}">
+                        <img ng-if="game.image.length > 0" ng-src="{{game.image}}" class="card-img-top"
+                            alt="{{game.name}}">
+                        <div class="card-header">
+                            {{game.name}}
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">{{game.description}}</p>
+                            <div ng-repeat="player in game.players">
+                                <p>{{player.name}}
+                                    <!-- <span class="position" title="Position">({{player.position}})</span>  -->
+                                    <span class="badge badge-primary" title="Position">{{player.position}}</span>
+                                    <!-- <span class="buyIns" title="Buy Ins" ng-if="player.buyIns > 0">[{{player.buyIns}}]</span>  -->
+                                    <span class="badge badge-secondary" title="Buy Ins"
+                                        ng-if="player.buyIns > 0">{{player.buyIns}}</span>
+                                    <span class="winner" ng-if="player.position == 1"><strong>Winner</strong></span>
+                                </p>
                             </div>
-                            <div class="card-body">
-                                <p class="card-text">{{game.description}}</p>
-                                <div ng-repeat="player in game.players">
-                                    <p>{{player.name}} 
-                                        <!-- <span class="position" title="Position">({{player.position}})</span>  -->
-                                        <span class="badge badge-primary" title="Position">{{player.position}}</span>
-                                        <!-- <span class="buyIns" title="Buy Ins" ng-if="player.buyIns > 0">[{{player.buyIns}}]</span>  -->
-                                        <span class="badge badge-secondary" title="Buy Ins" ng-if="player.buyIns > 0">{{player.buyIns}}</span>
-                                        <span class="winner" ng-if="player.position == 1"><strong>Winner</strong></span>
-                                    </p>
-                                </div>
+
+                            <!-- Chips -->
+                             <hr />
+                            <div ng-if="game.chips">
+                                <strong>Chips:</strong>
+                                <span ng-repeat="chip in game.chips">
+                                    <img src="images/poker-chip.svg" width="15px" style="fill:red"/>
+                                    <span style="color:{{chip.colour}}">{{chip.amount}}</span> x <span>{{chip.quantity}}</span>
+                                </span>
                             </div>
-                            <div class="card-footer text-muted">
-                                {{game.date | toDate | date:'mediumDate'}}
-                            </div>
+                        </div>
+
+                        <div class="card-footer text-muted">
+                            {{game.date | toDate | date:'mediumDate'}}
                         </div>
                     </div>
                 </div>
-                
+
             </div>
 
         </div>
@@ -172,13 +225,14 @@
     <footer class="footer">
         <div class="container">
             <span class="text-muted"><a href="https://AlexHedley.github.io/">Alex Hedley</a></span>
-            <span class="float-right"><i class="fab fa-github"></i> <a href="https://github.com/AlexHedley/poker">GitHub</a></span>
+            <span class="float-right"><i class="fab fa-github"></i> <a
+                    href="https://github.com/AlexHedley/poker">GitHub</a></span>
         </div>
     </footer>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="js/vendor/jquery-3.3.1.min.js" ></script>
+    <script src="js/vendor/jquery-3.3.1.min.js"></script>
     <script>window.jQuery || document.write('<script src="js/vendor/jquery-slim.min.js"><\/script>')</script>
     <script src="js/vendor/jquery-ui.min.js"></script>
     <!-- <script src="js/vendor/jquery-ui.1.12.1.min.js"></script> -->
@@ -193,5 +247,6 @@
     <script src="js/vendor/pivot.min.js"></script>
     <script src="js/vendor/sorttable.js"></script>
     <script src="js/app.js"></script>
-    </body>
+</body>
+
 </html>

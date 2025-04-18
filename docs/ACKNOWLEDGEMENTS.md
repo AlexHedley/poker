@@ -13,3 +13,7 @@
 
 https://www.flaticon.com/free-icon/poker-table_84480
 <a href="https://www.flaticon.com/free-icons/casino" title="casino icons">Casino icons created by Freepik - Flaticon</a>
+
+Poker Chip - Anton Gajdosik
+https://thenounproject.com/icon/poker-chip-170742/
+Poker Chip by Anton Gajdosik from Noun Project (CC BY 3.0)
