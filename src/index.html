@@ -156,26 +156,27 @@
 
             <br />
 
-            <!-- <div class="row">
-                    <div class="col">
+            <div class="row">
+                <div class="col">
 
-                        <div class="form-check">
-                            <input type="checkbox" class="form-check-input" id="ui" ng-model="ui" ng-change="generatePivot()">
-                            <label class="form-check-label" for="ui">UI</label>
-                        </div>
-
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="ui" ng-model="ui"
+                            ng-change="generatePivot()">
+                        <label class="form-check-label" for="ui">UI</label>
                     </div>
-                </div> -->
 
-            <!-- <div class="row">
-                    <div class="col">
+                </div>
+            </div>
 
-                        <div id="output" style="margin: 30px;">
-                            <p>Table...</p>
-                        </div>
+            <div class="row">
+                <div class="col">
 
+                    <div id="output" style="margin: 30px;">
+                        <p>Table...</p>
                     </div>
-                </div> -->
+
+                </div>
+            </div>
 
             <div class="row">
                 <div ng-repeat="game in games | orderBy:'-id' | filter:searchText" class="col-md-3"
@@ -200,12 +201,13 @@
                             </div>
 
                             <!-- Chips -->
-                             <hr />
+                            <hr />
                             <div ng-if="game.chips">
                                 <strong>Chips:</strong>
                                 <span ng-repeat="chip in game.chips">
-                                    <img src="images/poker-chip.svg" width="15px" style="fill:red"/>
-                                    <span style="color:{{chip.colour}}">{{chip.amount}}</span> x <span>{{chip.quantity}}</span>
+                                    <img src="images/poker-chip.svg" width="15px" style="fill:red" />
+                                    <span style="color:{{chip.colour}}">{{chip.amount}}</span> x
+                                    <span>{{chip.quantity}}</span>
                                 </span>
                             </div>
                         </div>
