@@ -97,128 +97,139 @@
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="row justify-content-md-center">
-                <div class="">
 
-                    <table id="results" class="sortable">
-                        <thead>
-                            <tr>
-                                <th>Date</th>
-                                <th>Name</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr ng-repeat="game in games">
-                                <td>{{game.date}}</td>
-                                <td>{{game.name}}</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                <div class="row justify-content-md-center">
+                    <div class="col">
+
+                        <table id="results" class="sortable">
+                            <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Name</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="game in games">
+                                    <td>{{game.date}}</td>
+                                    <td>{{game.name}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+
+                    <div class="col"></div>
+
+                    <div class="col">
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="ui" ng-model="ui"
+                                ng-change="generatePivot()">
+                            <label class="form-check-label" for="ui">UI</label>
+                        </div>
+
+                        <div id="output" style="margin: 30px;">
+                            <p>Table...</p>
+                        </div>
+                    </div>
 
                 </div>
-            </div>
 
-            <br />
+                <br />
 
-            <div class="row justify-content-md-center">
-                <div class="">
+                <div class="row justify-content-md-center">
+                    <div class="">
 
-                    <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
-                        <ol class="carousel-indicators">
-                            <li ng-repeat="set in sets" data-target="#carouselExampleCaptions"
-                                data-slide-to="{{$index}}"></li>
-                        </ol>
-                        <div class="carousel-inner">
-                            <div ng-repeat="game in games" class="carousel-item" ng-class='{active:$first}'>
-                                <!-- <img src="/poker/{{game.image}}" class="d-block w-100" alt="{{game.name}}"> -->
-                                <div class="carousel-caption d-none d-md-block">
-                                    <h5>{{game.name}}</h5>
-                                    <p>{{game.description}}</p>
+                        <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+                            <ol class="carousel-indicators">
+                                <li ng-repeat="set in sets" data-target="#carouselExampleCaptions"
+                                    data-slide-to="{{$index}}"></li>
+                            </ol>
+                            <div class="carousel-inner">
+                                <div ng-repeat="game in games" class="carousel-item" ng-class='{active:$first}'>
+                                    <!-- <img src="/poker/{{game.image}}" class="d-block w-100" alt="{{game.name}}"> -->
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <h5>{{game.name}}</h5>
+                                        <p>{{game.description}}</p>
+                                    </div>
                                 </div>
                             </div>
+                            <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button"
+                                data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#carouselExampleCaptions" role="button"
+                                data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
                         </div>
-                        <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button"
-                            data-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                        <a class="carousel-control-next" href="#carouselExampleCaptions" role="button"
-                            data-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Next</span>
-                        </a>
+
                     </div>
-
                 </div>
-            </div>
 
-            <br />
+                <br />
 
-            <div class="row">
-                <div class="col">
+                <div class="row">
+                    <div class="col">
 
-                    <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="ui" ng-model="ui"
-                            ng-change="generatePivot()">
-                        <label class="form-check-label" for="ui">UI</label>
+                        <p>Commemorative Chips:</p>
+
+                        <img src="images/chips/chip-1stSept2023.jpg" alt="Chip - 1st Sept 2023" style="width: 150px;" />
+                        <img src="images/chips/chip-12thJan2024.jpg" alt="Chip - 12th Jan 2024" style="width: 150px;" />
+                        <img src="images/chips/chip-31stJan2025.jpg" alt="Chip - 31st Jan 2025" style="width: 150px;" />
+                        <img src="images/chips/chip-14thMar2025.jpg" alt="Chip - 14th Mar 2025" style="width: 150px;" />
+
                     </div>
-
                 </div>
-            </div>
 
-            <div class="row">
-                <div class="col">
+                <br />
 
-                    <div id="output" style="margin: 30px;">
-                        <p>Table...</p>
-                    </div>
+                <div class="row">
+                    <div ng-repeat="game in games | orderBy:'-id' | filter:searchText" class="col-md-3"
+                        style="margin-bottom: 50px;">
+                        <div class="card" style="width: 18rem;" data-id="{{game.id}}">
+                            <img ng-if="game.image.length > 0" ng-src="{{game.image}}" class="card-img-top"
+                                alt="{{game.name}}">
+                            <div class="card-header">
+                                {{game.name}}
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text">{{game.description}}</p>
+                                <div ng-repeat="player in game.players">
+                                    <p>{{player.name}}
+                                        <!-- <span class="position" title="Position">({{player.position}})</span>  -->
+                                        <span class="badge badge-primary" title="Position">{{player.position}}</span>
+                                        <!-- <span class="buyIns" title="Buy Ins" ng-if="player.buyIns > 0">[{{player.buyIns}}]</span>  -->
+                                        <span class="badge badge-secondary" title="Buy Ins"
+                                            ng-if="player.buyIns > 0">{{player.buyIns}}</span>
+                                        <span class="winner" ng-if="player.position == 1"><strong>Winner</strong></span>
+                                    </p>
+                                </div>
 
-                </div>
-            </div>
-
-            <div class="row">
-                <div ng-repeat="game in games | orderBy:'-id' | filter:searchText" class="col-md-3"
-                    style="margin-bottom: 50px;">
-                    <div class="card" style="width: 18rem;" data-id="{{game.id}}">
-                        <img ng-if="game.image.length > 0" ng-src="{{game.image}}" class="card-img-top"
-                            alt="{{game.name}}">
-                        <div class="card-header">
-                            {{game.name}}
-                        </div>
-                        <div class="card-body">
-                            <p class="card-text">{{game.description}}</p>
-                            <div ng-repeat="player in game.players">
-                                <p>{{player.name}}
-                                    <!-- <span class="position" title="Position">({{player.position}})</span>  -->
-                                    <span class="badge badge-primary" title="Position">{{player.position}}</span>
-                                    <!-- <span class="buyIns" title="Buy Ins" ng-if="player.buyIns > 0">[{{player.buyIns}}]</span>  -->
-                                    <span class="badge badge-secondary" title="Buy Ins"
-                                        ng-if="player.buyIns > 0">{{player.buyIns}}</span>
-                                    <span class="winner" ng-if="player.position == 1"><strong>Winner</strong></span>
-                                </p>
+                                <!-- Chips -->
+                                <hr />
+                                <div ng-if="game.chips">
+                                    <strong>Chips:</strong>
+                                    <span ng-repeat="chip in game.chips">
+                                        <img src="images/poker-chip.svg" width="15px" style="fill:red" />
+                                        <span style="color:{{chip.colour}}">{{chip.amount}}</span> x
+                                        <span>{{chip.quantity}}</span>
+                                    </span>
+                                </div>
                             </div>
 
-                            <!-- Chips -->
-                            <hr />
-                            <div ng-if="game.chips">
-                                <strong>Chips:</strong>
-                                <span ng-repeat="chip in game.chips">
-                                    <img src="images/poker-chip.svg" width="15px" style="fill:red" />
-                                    <span style="color:{{chip.colour}}">{{chip.amount}}</span> x
-                                    <span>{{chip.quantity}}</span>
-                                </span>
+                            <div class="card-footer text-muted">
+                                {{game.date | toDate | date:'mediumDate'}}
                             </div>
                         </div>
-
-                        <div class="card-footer text-muted">
-                            {{game.date | toDate | date:'mediumDate'}}
-                        </div>
                     </div>
+
                 </div>
 
             </div>
+            <!-- container end -->
 
         </div>
 
