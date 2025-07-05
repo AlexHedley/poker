@@ -49,14 +49,11 @@ myApp.controller('myController', function ($scope, $http, $q, $filter) {
         $http.get(file)
             .then(function(response) {
                 $scope.redtooth = response.data;
+
+                var chartData = getChartData(response.data);
+                setupChart(chartData);
             });
     };
 
     $scope.init();
-});
-
-myApp.filter('toDate', function() {
-    return function(items) {
-        return new Date(items);
-    };
 });
