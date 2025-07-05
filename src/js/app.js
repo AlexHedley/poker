@@ -2,19 +2,21 @@ var myApp = angular.module('myApp', []);
 myApp.controller('myController', function ($scope, $http, $q, $filter) {
 
     $scope.games = [];
+    $scope.redtooth = [];
 
     $scope.init = function () {
         getData();
+        getRedtoothData();
     }
 
     getData = () =>  {
         var file = 'data/games.json';
 
         $http.get(file)
-        .then(function(response) {
-            $scope.games = response.data.games;
-            $scope.generatePivot();
-        });
+            .then(function(response) {
+                $scope.games = response.data.games;
+                $scope.generatePivot();
+            });
     };
 
     $scope.generatePivot = () => {
@@ -40,6 +42,15 @@ myApp.controller('myController', function ($scope, $http, $q, $filter) {
         }
 
     }
+
+    getRedtoothData = () =>  {
+        var file = 'data/redtooth.json';
+
+        $http.get(file)
+            .then(function(response) {
+                $scope.redtooth = response.data;
+            });
+    };
 
     $scope.init();
 });

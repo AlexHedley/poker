@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "name": "First game - Monkseaton Arms",
+        "date": "2025-07-02",
+        "time": "19:30",
+        "description": "Buy in £10",
+        "players": [
+            {
+                "name": "Alex Hedley",
+                "position": 0,
+                "leaguePosition": 41,
+                "games": 1,
+                "points": 10
+            },
+            {
+                "name": "Will Wetzel",
+                "position": 3,
+                "leaguePosition": 26,
+                "points": 70,
+                "games": 1,
+                "winnings": "£40" 
+            }
+        ]
+    }
+]
