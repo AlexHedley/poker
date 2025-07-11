@@ -1,77 +1,35 @@
-// Charts
+// // Charts
 
-// https://www.chartjs.org/docs/latest/samples/line/multi-axis.html
-
-// Position per game
-getChartData = (data) => {
-    const tempData = [
-        { 
-            "date": "2025-07-02",
-            "player": "Alex Hedley",
-            "leaguePosition": 41,
-        },
-        { 
-            "date": "2025-07-02",
-            "player": "Will Wetzel",
-            "leaguePosition": 26,
-        },
-        { 
-            "date": "2025-07-03",
-            "player": "Alex Hedley",
-            "leaguePosition": 39,
-        },
-        { 
-            "date": "2025-07-03",
-            "player": "Will Wetzel",
-            "leaguePosition": 24,
-        }
-    ]
-    return tempData;
-};
+// // https://www.chartjs.org/docs/latest/samples/line/multi-axis.html
 
 setupChart = (chartData) => {
     Chart.register(ChartDataLabels);
 
-    const options = {
-        responsive: true,
-        interaction: {
-        mode: 'index',
-        intersect: false,
-        },
-        stacked: false,
-        plugins: {
-            datalabels: {
-                color: "#36A2EB",
-            },
-            title: {
-                display: true,
-                text: 'Position'
-            }
-        },
-        scales: {
-            "Alex Hedley": {
-                type: 'linear',
-                display: true,
-                position: 'left',
-            },
-            "Will Wetzel": {
-                type: 'linear',
-                display: true,
-                position: 'right',
+    var dates = Array.from(new Set(chartData.map(d => d.date))).reverse();
+    // console.log(dates);
 
-                // grid line settings
-                grid: {
-                drawOnChartArea: false, // only want the grid lines for one axis to show up
-                },
-            },
-        }
+    var alex = constructDataForPlayer(chartData, "Alex Hedley");
+    var will = constructDataForPlayer(chartData, "Will Wetzel");
+
+    const datasets = [];
+    var playerDataAlex = {
+        label: "Alex",
+        data: alex,
+        borderColor: "red",
+        fill: false
     };
+    var playerDataWill = {
+        label: "Will",
+        data: will,
+        borderColor: "blue",
+        fill: false
+    };
+    datasets.push(playerDataAlex);
+    datasets.push(playerDataWill);
 
-    const datasets = buildDataSets(chartData);
-    console.log(datasets);
-
-    var dates = Array.from(new Set(chartData.map(d => d.date)));
-    console.log(dates);
+    const options = {
+        legend: { display: false }
+    };
 
     const config = {
         type: "line",
@@ -83,47 +41,18 @@ setupChart = (chartData) => {
     };
 
     let ctx = $("#chartPosition");
-
     let lineGraph = new Chart(ctx, config);
 };
 
-buildDataSets = (chartData) => {
-    var datasets = [];
-    var players = new Set(chartData.map(d => d.player));
-    console.log(players);
+const constructDataForPlayer = (chartData, player) => {
+    const gameDataForPlayer = chartData.map(g => g.players.filter(p => p.name === player)); //.map(g => g.position);
+    // console.log(gameDataForPlayer);
 
-    players.forEach((p, i) => {
-        var positions = chartData.filter((game) => game.player == p).map(g => g.leaguePosition);
-        console.log(positions);
+    // const postions = gameDataForPlayer.flatMap(g => g.map(p => p.position));
+    // console.log(postions);
+    // return postions.reverse();
 
-        var dataset = {
-            label: p,
-            data: positions,
-            borderColor: randomColour(),
-            backgroundColor: randomColour(),
-            yAxisID: i
-        }
-        datasets.push(dataset);
-    });
-
-    return datasets;
-
-    // Template
-    // {
-    //     label:
-    //     data:
-    //     borderColor:
-    //     backgroundColor:
-    //     yAxisID: 
-    // }
+    const leaguePoints = gameDataForPlayer.flatMap(g => g.map(p => p.leaguePoints));
+    // console.log(leaguePoints);
+    return leaguePoints.reverse();
 }
-
-function randomColour() {
-    const randomNum = () => Math.floor(Math.random() * (235 - 52 + 1) + 52);
-    const randomRGB = () => `rgb(${randomNum()}, ${randomNum()}, ${randomNum()})`;
-    var randomColour = randomRGB();
-    console.log(randomColour);
-    return randomColour;
-}
-
-// ----- ----- ----- ----- -----

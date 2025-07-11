@@ -50,8 +50,9 @@ myApp.controller('myController', function ($scope, $http, $q, $filter) {
             .then(function(response) {
                 $scope.redtooth = response.data;
 
-                var chartData = getChartData(response.data);
-                setupChart(chartData);
+                // var chartData = getChartData(response.data);
+                // setupChart(chartData);
+                setupChart($scope.redtooth);
             });
     };
 
