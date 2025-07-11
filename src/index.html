@@ -227,6 +227,7 @@
                 <div class="row justify-content-md-center">
                     <div class="col">
                         <h2>Redtooth</h2>
+                        <img src="images/redtooth-poker-logo.png" alt="Redtooth Logo" width="150px" />
                     </div>
                 </div>
 
@@ -244,8 +245,12 @@
                                         <th>Player</th>
                                         <th>Position</th>
                                         <th>Points</th>
+                                        <th>Total</th>
                                         <th>Winnings</th>
+                                        <th>Bounty</th>
+                                        <th>Bounties</th>
                                         <th>League Position</th>
+                                        <th>League Points</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -253,11 +258,17 @@
                                         <td>{{player.name}}</td>
                                         <td>{{player.position}}</td>
                                         <td>{{player.points}}</td>
+                                        <td>{{player.winnings + player.bounties}}</td>
                                         <td>{{player.winnings}}</td>
+                                        <td>{{player.bounty}}</td>
+                                        <td>{{player.bounties}}</td>
                                         <td>{{player.leaguePosition}}</td>
+                                        <td>{{player.leaguePoints}}</td>
                                     </tr>
                                 </tbody>
                             </table>
+
+                            <br />
 
                         </div>
                         <!-- Games end -->
