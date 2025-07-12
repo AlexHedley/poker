@@ -49,6 +49,13 @@
 
         <div class="row">
             <div class="col">
+                <a name="top"></a>
+                <a href="#redtooth" style="text-decoration: none; color: green;">redtooth</a>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
                 <button class="btn btn-success float-right" type="button" data-toggle="collapse" data-target="#image"
                     aria-expanded="false" aria-controls="image">
                     Show/Hide
@@ -221,6 +228,7 @@
             <hr />
 
             <a name="redtooth"></a>
+            <span><a href="#top" style="text-decoration: none; color: green;">Back to top</a></span>
 
             <div class="container">
 
@@ -238,9 +246,9 @@
 
                         <!-- Games -->
                         <div ng-repeat="game in redtooth">
-                            <p>{{game.date}}: {{game.name}}</p>
+                            <p><strong>{{game.date}}</strong>: {{game.name}}</p>
                             
-                            <table id="results" class="sortable">
+                            <table id="results-{{game.date}}" class="sortable results">
                                 <thead>
                                     <tr>
                                         <th>Player</th>
