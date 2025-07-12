@@ -1,7 +1,4 @@
-// // Charts
-
-// // https://www.chartjs.org/docs/latest/samples/line/multi-axis.html
-
+// Charts
 setupChart = (chartData) => {
     Chart.register(ChartDataLabels);
 
