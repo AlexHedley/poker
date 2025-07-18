@@ -2,7 +2,36 @@
     {
         "id": 2,
         "name": "Monkseaton Arms",
-        "date": "2025-07-09",
+        "date": "2025-07-15",
+        "time": "19:30",
+        "description": "Buy in £10",
+        "players": [
+            {
+                "name": "Alex Hedley",
+                "position": 10,
+                "points": 10,
+                "bounty": true,
+                "games": 3,
+                "leaguePosition": 35,
+                "leaguePoints": 30
+            },
+            {
+                "name": "Will Wetzel",
+                "position": 6,
+                "points": 40,
+                "bounty": true,
+                "winnings": "£10",
+                "bounties": "£10",
+                "games": 3,
+                "leaguePosition": 25,
+                "leaguePoints": 120
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "name": "Monkseaton Arms",
+        "date": "2025-07-08",
         "time": "19:30",
         "description": "Buy in £10",
         "players": [
@@ -30,7 +59,7 @@
     {
         "id": 1,
         "name": "First game - Monkseaton Arms",
-        "date": "2025-07-02",
+        "date": "2025-07-01",
         "time": "19:30",
         "description": "Buy in £10",
         "players": [
