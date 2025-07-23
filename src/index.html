@@ -267,10 +267,10 @@
                                         <td>{{player.name}}</td>
                                         <td>{{player.position}}</td>
                                         <td>{{player.points}}</td>
-                                        <td>{{player.winnings + player.bounties}}</td>
-                                        <td>{{player.winnings}}</td>
+                                        <td>£{{player.winnings -- player.bounties}}</td>
+                                        <td>£{{player.winnings}}</td>
                                         <td>{{player.bounty}}</td>
-                                        <td>{{player.bounties}}</td>
+                                        <td>£{{player.bounties}}</td>
                                         <td>{{player.leaguePosition}}</td>
                                         <td>{{player.leaguePoints}}</td>
                                     </tr>
