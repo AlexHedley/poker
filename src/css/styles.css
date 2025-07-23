@@ -49,6 +49,14 @@ h1 {
     background-color: #218838;
 }
 
+/* Sortable tables */
+/* table.sortable thead {
+    background-color:#eee;
+    color:#666666;
+    font-weight: bold;
+    cursor: default;
+} */
+
 /* graphs */
 #graphs {
     background-color: white;
