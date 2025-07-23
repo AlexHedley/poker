@@ -1,10 +1,43 @@
 [
     {
-        "id": 2,
+        "id": 42,
+        "name": "Monkseaton Arms",
+        "date": "2025-07-22",
+        "time": "19:30",
+        "description": "Buy in £10",
+        "year": "2025-2026",
+        "season": 3,
+        "players": [
+            {
+                "name": "Alex Hedley",
+                "position": 12,
+                "points": 0,
+                "bounty": true,
+                "bounties": "5",
+                "games": 1,
+                "leaguePosition": 0,
+                "leaguePoints": 0
+            },
+            {
+                "name": "Will Wetzel",
+                "position": 5,
+                "points": 0,
+                "bounty": true,
+                "bounties": "5",
+                "games": 1,
+                "leaguePosition": 0,
+                "leaguePoints": 0
+            }
+        ]
+    },
+    {
+        "id": 3,
         "name": "Monkseaton Arms",
         "date": "2025-07-15",
         "time": "19:30",
         "description": "Buy in £10",
+        "year": "2025-2026",
+        "season": 2,
         "players": [
             {
                 "name": "Alex Hedley",
@@ -20,8 +53,8 @@
                 "position": 6,
                 "points": 40,
                 "bounty": true,
-                "winnings": "£10",
-                "bounties": "£10",
+                "winnings": "10",
+                "bounties": "10",
                 "games": 3,
                 "leaguePosition": 25,
                 "leaguePoints": 120
@@ -34,6 +67,8 @@
         "date": "2025-07-08",
         "time": "19:30",
         "description": "Buy in £10",
+        "year": "2025-2026",
+        "season": 2,
         "players": [
             {
                 "name": "Alex Hedley",
@@ -49,7 +84,7 @@
                 "position": 15,
                 "points": 10,
                 "bounty": true,
-                "bounties": "£10",
+                "bounties": "10",
                 "games": 2,
                 "leaguePosition": 28,
                 "leaguePoints": 80
@@ -62,6 +97,8 @@
         "date": "2025-07-01",
         "time": "19:30",
         "description": "Buy in £10",
+        "year": "2025-2026",
+        "season": 2,
         "players": [
             {
                 "name": "Alex Hedley",
@@ -77,7 +114,7 @@
                 "position": 3,
                 "points": 70,
                 "bounty": false,
-                "winnings": "£40",
+                "winnings": "40",
                 "games": 1,
                 "leaguePosition": 26,
                 "leaguePoints": 70
