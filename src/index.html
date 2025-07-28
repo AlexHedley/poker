@@ -251,6 +251,7 @@
                             <table id="results-{{game.date}}" class="sortable results">
                                 <thead>
                                     <tr>
+                                        <th>Season</th>
                                         <th>Player</th>
                                         <th>Position</th>
                                         <th>Points</th>
@@ -264,6 +265,7 @@
                                 </thead>
                                 <tbody>
                                     <tr ng-repeat="player in game.players">
+                                        <td>{{game.season}}</td>
                                         <td>{{player.name}}</td>
                                         <td>{{player.position}}</td>
                                         <td>{{player.points}}</td>

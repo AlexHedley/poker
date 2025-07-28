@@ -11,22 +11,22 @@
             {
                 "name": "Alex Hedley",
                 "position": 12,
-                "points": 0,
+                "points": 10,
                 "bounty": true,
                 "bounties": "5",
                 "games": 1,
-                "leaguePosition": 0,
-                "leaguePoints": 0
+                "leaguePosition": 12,
+                "leaguePoints": 10
             },
             {
                 "name": "Will Wetzel",
                 "position": 5,
-                "points": 0,
+                "points": 50,
                 "bounty": true,
                 "bounties": "5",
                 "games": 1,
-                "leaguePosition": 0,
-                "leaguePoints": 0
+                "leaguePosition": 5,
+                "leaguePoints": 50
             }
         ]
     },
