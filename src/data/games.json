@@ -340,6 +340,68 @@
                     "buyIns": 1
                 }
             ]
+        },
+        {
+            "id": 8,
+            "name": "July 2025",
+            "date": "2025-07-25",
+            "description": "£40 Winner, £10 Second",
+            "pot": "£50",
+            "image": "images/25thJuly2025.jpg",
+            "players": [
+                {
+                    "name": "Neil",
+                    "position": 5,
+                    "buyIns": 1
+                },
+                {
+                    "name": "Cotton",
+                    "position": 4,
+                    "buyIns": 1
+                },
+                {
+                    "name": "Alex",
+                    "position": 1,
+                    "buyIns": 1
+                },
+                {
+                    "name": "Jonathan",
+                    "position": 3,
+                    "buyIns": 1
+                },
+                {
+                    "name": "Lish",
+                    "position": 2,
+                    "buyIns": 1
+                }
+            ],
+            "chips": [
+                {
+                    "colour": "white",
+                    "amount": "10p",
+                    "quantity": "10"
+                },
+                {
+                    "colour": "red",
+                    "amount": "20p",
+                    "quantity": "5"
+                },
+                {
+                    "colour": "green",
+                    "amount": "50p",
+                    "quantity": "2"
+                },
+                {
+                    "colour": "blue",
+                    "amount": "£1",
+                    "quantity": "3"
+                },
+                {
+                    "colour": "purple",
+                    "amount": "£2",
+                    "quantity": "2"
+                }
+            ]
         }
     ]
 }
