@@ -49,6 +49,13 @@
 
         <div class="row">
             <div class="col">
+                <a name="top"></a>
+                <a href="#redtooth" style="text-decoration: none; color: green;">redtooth</a>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
                 <button class="btn btn-success float-right" type="button" data-toggle="collapse" data-target="#image"
                     aria-expanded="false" aria-controls="image">
                     Show/Hide
@@ -152,6 +159,7 @@
                         <img src="images/chips/chip-12thJan2024.jpg" alt="Chip - 12th Jan 2024" style="width: 150px;" />
                         <img src="images/chips/chip-31stJan2025.jpg" alt="Chip - 31st Jan 2025" style="width: 150px;" />
                         <img src="images/chips/chip-14thMar2025.jpg" alt="Chip - 14th Mar 2025" style="width: 150px;" />
+                        <img src="images/chips/chip-25thJuly2025.jpg" alt="Chip - 25th July 2025" style="width: 150px;" />
 
                     </div>
                 </div>
@@ -221,6 +229,7 @@
             <hr />
 
             <a name="redtooth"></a>
+            <span><a href="#top" style="text-decoration: none; color: green;">Back to top</a></span>
 
             <div class="container">
 
@@ -238,11 +247,12 @@
 
                         <!-- Games -->
                         <div ng-repeat="game in redtooth">
-                            <p>{{game.date}}: {{game.name}}</p>
+                            <p><strong>{{game.date}}</strong>: {{game.name}}</p>
                             
-                            <table id="results" class="sortable">
+                            <table id="results-{{game.date}}" class="sortable results">
                                 <thead>
                                     <tr>
+                                        <th>Season</th>
                                         <th>Player</th>
                                         <th>Position</th>
                                         <th>Points</th>
@@ -256,13 +266,14 @@
                                 </thead>
                                 <tbody>
                                     <tr ng-repeat="player in game.players">
+                                        <td>{{game.season}}</td>
                                         <td>{{player.name}}</td>
                                         <td>{{player.position}}</td>
                                         <td>{{player.points}}</td>
-                                        <td>{{player.winnings + player.bounties}}</td>
-                                        <td>{{player.winnings}}</td>
+                                        <td>£{{player.winnings -- player.bounties}}</td>
+                                        <td>£{{player.winnings}}</td>
                                         <td>{{player.bounty}}</td>
-                                        <td>{{player.bounties}}</td>
+                                        <td>£{{player.bounties}}</td>
                                         <td>{{player.leaguePosition}}</td>
                                         <td>{{player.leaguePoints}}</td>
                                     </tr>
