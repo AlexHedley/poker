@@ -402,6 +402,73 @@
                     "quantity": "2"
                 }
             ]
+        },
+        {
+            "id": 9,
+            "name": "April 2026",
+            "date": "2026-04-25",
+            "description": "£80 Winner, £10 Second",
+            "pot": "£90",
+            "image": "images/25thApril2026.jpg",
+            "players": [
+                {
+                    "name": "Will",
+                    "position": 1,
+                    "buyIns": 1
+                },
+                {
+                    "name": "Lish",
+                    "position": 2,
+                    "buyIns": 2
+                },
+                {
+                    "name": "Jonathan",
+                    "position": 3,
+                    "buyIns": 1
+                },
+                {
+                    "name": "Mo",
+                    "position": 4,
+                    "buyIns": 1
+                },
+                {
+                    "name": "Marcus",
+                    "position": 5,
+                    "buyIns": 1
+                },
+                {
+                    "name": "Alex",
+                    "position": 6,
+                    "buyIns": 1
+                },
+                {
+                    "name": "Dougs",
+                    "position": 7,
+                    "buyIns": 2
+                }
+            ],
+            "chips": [
+                {
+                    "colour": "red",
+                    "amount": "5",
+                    "quantity": "10"
+                },
+                {
+                    "colour": "green",
+                    "amount": "25",
+                    "quantity": "5"
+                },
+                {
+                    "colour": "blue",
+                    "amount": "100",
+                    "quantity": "2"
+                },
+                {
+                    "colour": "purple",
+                    "amount": "500",
+                    "quantity": "1"
+                }
+            ]
         }
     ]
 }
